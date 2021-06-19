@@ -8,11 +8,11 @@ var tbody = d3.select("tbody");
 console.log(tableData);
 
 // Step 1: Loop through 'data' to add ufo sighting values for each column
-tableData.forEach((ufoSighting) => {
+tableData.forEach((tableContents) => {
   // Step 2: use d3 to append one table row `tr` for each ufo sighting object
   var row = tbody.append("tr");
   // Step 3: use 'Object.entries' to console.log each key and value
-  Object.entries(ufoSighting).forEach(([key, value]) => {
+  Object.entries(tableContents).forEach(([key, value]) => {
     // Step 4: append a cell to the row for each value in ufo sightings
     var column = row.append("td");
     column.text(value);  

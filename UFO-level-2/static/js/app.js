@@ -8,11 +8,11 @@ var tbody = d3.select("tbody");
 console.log(tableData);
 
 // Step 1: Loop through 'data' to add ufo sighting values for each column
-tableData.forEach((ufoSighting) => {
+tableData.forEach((tableData) => {
   // Step 2: use d3 to append one table row `tr` for each ufo sighting object
   var row = tbody.append("tr");
   // Step 3: use 'Object.entries' to console.log each key and value
-  Object.entries(ufoSighting).forEach(([key, value]) => {
+  Object.entries(tableData).forEach(([key, value]) => {
     // Step 4: append a cell to the row for each value in ufo sightings
     var column = row.append("td");
     column.text(value);  
@@ -27,19 +27,17 @@ function runEnter() {
     tbody.html("");
     // prevent the page from refreshing
     d3.event.preventDefault();
-    // Select the input date and get the raw HTML node
+    // Select the input date, city, state, country, shape and get the raw HTML nodes
     var inputElementDate = d3.select("#datetime");
     var inputElementCity = d3.select("#city");
-    //alert(inputElementCity);
     var inputElementState = d3.select("#state");
     var inputElementCountry = d3.select("#country");
     var inputElementShape = d3.select("#shape");
   
   
-    // Get the value property of the input date element
+    // Get the value property of the input date, city, state, country & shape elements
     var inputValueDate = inputElementDate.property("value");
     var inputValueCity = inputElementCity.property("value");
-    //alert(inputValueCity);
     var inputValueState = inputElementState.property("value");
     var inputValueCountry = inputElementCountry.property("value");
     var inputValueShape = inputElementShape.property("value");
